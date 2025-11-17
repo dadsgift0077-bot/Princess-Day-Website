@@ -208,29 +208,63 @@
             </div>
             <button class="btn" onclick="showPage(3)">Next 🌸</button>
         </div>
-        
-        <!-- Page 3 -->
+         <!-- Page 3 with Flip Cards -->
         <div class="page" id="page3">
             <h1>Special Messages for Almas</h1>
+            <p style="color: #d864a9; font-weight: 600;">✨ Tap each card to reveal! ✨</p>
             
-            <div class="card">
-                <p><strong>🐼 Your Presence</strong></p>
-                <p>Calming, like everything slows down in this rush world</p>
-            </div>
-            
-            <div class="card">
-                <p><strong>🦇 Your love</strong></p>
-                <p>Makes me the happiest man on earth🤩</p>
-            </div>
-            
-            <div class="card">
-                <p><strong>✨ Your Yappings</strong></p>
-                <p>Exactly what my day needs</p>
-            </div>
-            
-            <div class="card">
-                <p><strong>🌸 Your Smile</strong></p>
-                <p>Lights up my heart baby</p>
+            <div class="flip-grid">
+                <!-- Flip Card 1 -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="emoji-large">🐼</div>
+                            <p>Tap Me!</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Your Presence</strong><br><br>Makes me feel like everything slows down in this world</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flip Card 2 -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="emoji-large">🦇</div>
+                            <p>Tap Me!</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Your love</strong><br><br>Makes me the happiest man on earth 🤩</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flip Card 3 -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="emoji-large">✨</div>
+                            <p>Tap Me!</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Your Yappings</strong><br><br>>Exactly what my day needs baby</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flip Card 4 -->
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="emoji-large">🌸</div>
+                            <p>Tap Me!</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p><strong>Your Smile</strong><br><br>Lights up my heart everytime my love</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <button class="btn" onclick="showPage(4)">Final Letter 💌</button>
@@ -290,4 +324,3 @@
     </script>
 </body>
 </html>
-
