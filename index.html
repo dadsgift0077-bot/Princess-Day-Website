@@ -1,1 +1,291 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Princess Almas 👑</title><link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@600&display=swap" rel="stylesheet"/><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Quicksand',sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;overflow-x:hidden}.container{max-width:500px;margin:20px;background:white;border-radius:30px;padding:40px 30px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}.page{display:none}.page.active{display:block}h1{font-family:'Fredoka One',cursive;font-size:2rem;color:#d864a9;text-align:center;margin-bottom:20px}p{line-height:1.8;color:#5d4b6a;text-align:center;margin:15px 0}.emoji{font-size:2rem;text-align:center;margin:20px 0}.btn{background:linear-gradient(135deg,#ff6b9d,#c06c84);color:white;border:none;padding:15px 40px;border-radius:50px;font-size:1.1rem;font-family:'Fredoka One',cursive;cursor:pointer;margin:20px auto;display:block;box-shadow:0 10px 30px rgba(192,108,132,0.4);transition:transform 0.3s}.btn:hover{transform:translateY(-3px)}.card{background:linear-gradient(135deg,#ffeaa7,#ffd4e5);padding:20px;border-radius:20px;margin:15px 0;text-align:center}.countdown{background:linear-gradient(135deg,#a8e6cf,#b9e0fc);padding:20px;border-radius:20px;margin:20px 0;text-align:center}.countdown h3{color:white;margin-bottom:15px}.time{display:flex;justify-content:space-around;gap:10px}.time div{background:white;padding:15px;border-radius:15px;flex:1}.time div strong{display:block;font-size:1.8rem;color:#d864a9;font-family:'Fredoka One',cursive}.time div span{font-size:0.8rem;color:#666}</style></head><body><div class="container"><div class="page active" id="p1"><div class="emoji">🌻🌸🌷👑</div><h1>Good Morning, Princess Almas!</h1><p>Since it's Princess Day today, I had to be the first one to wish the prettiest princess I know</p><p><strong>Princess Almas 🌻✨</strong></p><button class="btn" onclick="show(2)">Open My Heart 💖</button></div><div class="page" id="p2"><div class="countdown"><h3>✨ Our Journey Together ✨</h3><div class="time"><div><strong id="d">0</strong><span>Days</span></div><div><strong id="h">0</strong><span>Hours</span></div><div><strong id="m">0</strong><span>Minutes</span></div></div></div><div class="card"><p>I hope when you opened your eyes today, you see this letter</p><p>And since it's Princess Day</p><p>You don't just look like a princess, you carry yourself like one</p><p>Your presence makes things feel like 🏠 home</p><div class="emoji">💗🐼✨</div></div><button class="btn" onclick="show(3)">Next 🌸</button></div><div class="page" id="p3"><h1>For Princess Almas</h1><div class="card"><p>Your presence – calming, like everything slows down in this rush world 🐼</p></div><div class="card"><p>Your kindness – shows beautifully in small moments 🦇</p></div><div class="card"><p>Your energy – warm and exactly what my day needs ✨</p></div><button class="btn" onclick="show(4)">Final Letter 💌</button></div><div class="page" id="p4"><div class="emoji">🎉💐🎊</div><h1>Thank You, Almas</h1><div class="card"><p>Thank you for being the kind of person who makes days feel nicer without even trying</p><p>Thank you for the small moments, the smiles, the conversations – they stay with me</p><p>Thank you for being you – simply, effortlessly, beautifully you</p><div class="emoji">🌷🧁🐼🌸🦇👑</div></div><button class="btn" onclick="show(1)">Back to Start 😊</button></div></div><audio id="a" src="golden_hour.mp3" loop></audio><script>function show(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p'+n).classList.add('active');window.scrollTo(0,0)}function update(){const s=new Date('2024-01-01'),now=new Date(),diff=now-s,days=Math.floor(diff/864e5),hours=Math.floor((diff%864e5)/36e5),mins=Math.floor((diff%36e5)/6e4);document.getElementById('d').textContent=days;document.getElementById('h').textContent=hours;document.getElementById('m').textContent=mins}setInterval(update,1000);update();document.body.addEventListener('click',()=>document.getElementById('a').play(),{once:true})</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Princess Day for Almas 👑</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ffc6e0;
+            --yellow: #ffeaa7;
+            --mint: #a8e6cf;
+            --lavender: #d0cfff;
+            --soft-blue: #b9e0fc;
+            --font-heading: 'Fredoka One', cursive;
+            --font-body: 'Quicksand', sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .page {
+            display: none;
+            background: white;
+            border-radius: 30px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+        
+        .page.active {
+            display: block;
+            animation: fadeIn 0.6s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: #d864a9;
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        p {
+            line-height: 1.8;
+            color: #5d4b6a;
+            text-align: center;
+            margin: 15px 0;
+            font-size: 1.05rem;
+        }
+        
+        .emoji {
+            font-size: 2rem;
+            text-align: center;
+            margin: 20px 0;
+            letter-spacing: 5px;
+        }
+        
+        .btn {
+            background: linear-gradient(135deg, #ff6b9d, #c06c84);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-family: var(--font-heading);
+            cursor: pointer;
+            margin: 25px auto 0;
+            display: block;
+            box-shadow: 0 10px 30px rgba(192, 108, 132, 0.4);
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .card {
+            background: linear-gradient(135deg, #ffeaa7, #ffd4e5);
+            padding: 25px 20px;
+            border-radius: 20px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .countdown {
+            background: linear-gradient(135deg, var(--mint), var(--soft-blue));
+            padding: 25px 20px;
+            border-radius: 20px;
+            margin: 25px 0;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .countdown h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .time {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+        
+        .time div {
+            background: white;
+            padding: 15px 10px;
+            border-radius: 15px;
+            flex: 1;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .time div strong {
+            display: block;
+            font-size: 1.8rem;
+            color: #d864a9;
+            font-family: var(--font-heading);
+            margin-bottom: 5px;
+        }
+        
+        .time div span {
+            font-size: 0.85rem;
+            color: #666;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 1.6rem; }
+            p { font-size: 0.95rem; }
+            .time div strong { font-size: 1.5rem; }
+            .btn { padding: 12px 30px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <audio id="bgmusic" src="golden_hour.mp3" loop></audio>
+    
+    <div class="container">
+        <!-- Page 1 -->
+        <div class="page active" id="page1">
+            <div class="emoji">🌻🌸🌷👑</div>
+            <h1>Good Morning, Princess Almas!</h1>
+            <p>Since it's Princess Day today, I had to be the first one to wish the prettiest princess I know</p>
+            <p><strong>Princess Almas 🌻✨</strong></p>
+            <button class="btn" onclick="showPage(2)">Open My Heart 💖</button>
+        </div>
+        
+        <!-- Page 2 -->
+        <div class="page" id="page2">
+            <div class="countdown">
+                <h3>✨ Our Journey Together ✨</h3>
+                <div class="time">
+                    <div>
+                        <strong id="days">0</strong>
+                        <span>Days</span>
+                    </div>
+                    <div>
+                        <strong id="hours">0</strong>
+                        <span>Hours</span>
+                    </div>
+                    <div>
+                        <strong id="minutes">0</strong>
+                        <span>Minutes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <p>I hope when you opened your eyes today, you see this letter</p>
+                <p><strong>And since it's Princess Day</strong></p>
+                <p>You don't just look like a princess, you carry yourself like one</p>
+                <p>Your presence makes things feel like 🏠 home</p>
+                <div class="emoji">💗🐼✨</div>
+            </div>
+            <button class="btn" onclick="showPage(3)">Next 🌸</button>
+        </div>
+        
+        <!-- Page 3 -->
+        <div class="page" id="page3">
+            <h1>Special Messages for Almas</h1>
+            
+            <div class="card">
+                <p><strong>🐼 Your Presence</strong></p>
+                <p>Calming, like everything slows down in this rush world</p>
+            </div>
+            
+            <div class="card">
+                <p><strong>🦇 Your Kindness</strong></p>
+                <p>Shows beautifully in small moments 🤩</p>
+            </div>
+            
+            <div class="card">
+                <p><strong>✨ Your Energy</strong></p>
+                <p>Warm and exactly what my day needs</p>
+            </div>
+            
+            <div class="card">
+                <p><strong>🌸 Your Smile</strong></p>
+                <p>Lights up everything like magic</p>
+            </div>
+            
+            <button class="btn" onclick="showPage(4)">Final Letter 💌</button>
+        </div>
+        
+        <!-- Page 4 -->
+        <div class="page" id="page4">
+            <div class="emoji">🎉💐🎊</div>
+            <h1>Thank You, Almas</h1>
+            
+            <div class="card">
+                <p>Thank you for being the kind of person who makes days feel nicer without even trying</p>
+                <p>Thank you for the small moments, the smiles, the conversations – they stay with me longer than you know</p>
+                <p>Thank you for being you – simply, effortlessly, beautifully you</p>
+                <div class="emoji">🌷🧁🐼🌸🦇👑</div>
+            </div>
+            
+            <button class="btn" onclick="showPage(1)">Back to Start 😊</button>
+        </div>
+    </div>
+    
+    <script>
+        // Page navigation
+        function showPage(pageNum) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById('page' + pageNum).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            const startDate = new Date('2024-01-01'); // Change this to your actual start date!
+            const now = new Date();
+            const diff = now - startDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+        }
+        
+        // Update countdown every minute
+        setInterval(updateCountdown, 60000);
+        updateCountdown();
+        
+        // Auto-play background music on first click
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById('bgmusic');
+            audio.play().catch(e => console.log('Audio play failed:', e));
+        }, { once: true });
+    </script>
+</body>
+</html>
